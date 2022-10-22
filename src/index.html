@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+    <link href="../dist/output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+
+    <title>Frontend Mentor | E-commerce product page</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+        .attribution {
+            font-size: 11px;
+            text-align: center;
+        }
+        
+        .attribution a {
+            color: hsl(228, 45%, 44%);
+        }
+    </style>
+
+</head>
+
+<body class="lg:w-9/12 mx-auto">
+
+    <nav class="relative flex flex-row justify-between lg:justify-between items-center h-16 lg:h-32 border-b-2 lg:mb-6">
+        <div class="firstnav flex flex-row items-center gap-4 p-4">
+            <div class="lg:hidden">
+                <button class="navbar-burger flex items-center text-stone-500">
+                    <svg class="block h-4 w-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Mobile menu</title>
+                        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+                    </svg>
+                </button>
+            </div>
+            <h1 class="font-bold font-tutor text-2xl">sneakers</h1>
+        </div>
+
+        <div class="secnav flex flex-row lg:w-10/12 items-center justify-between">
+            <div class="links hidden lg:flex flex-row lg:gap-9">
+                <a class="text-dgblue font-normal" href="">Collections</a>
+                <a class="text-dgblue" href="">Men</a>
+                <a class="text-dgblue" href="">Women</a>
+                <a class="text-dgblue" href="">About</a>
+                <a class="text-dgblue" href="">Contact</a>
+            </div>
+            <div class="user flex mr-6 flex-row gap-4 lg:gap-8 items-center">
+                <svg id="cartIcon" class="cursor-pointer" width="22" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z" fill="#69707D" fill-rule="nonzero"/></svg>
+                <img src="../images/image-avatar.png" class="w-10 h-10 rounded-2xl cursor-pointer" />
+            </div>
+        </div>
+
+
+    </nav>
+    <div class="flex flex-row justify-center lg:justify-end">
+        <div id="cartComp" class="border-2 invisible absolute mt-4 rounded-lg w-11/12 z-10 lg:w-72 lg:top-20 lg:right-28 lg:mr-3 mx-auto flex flex-col h-60 bg-white">
+            <header class="h-16 p-4 border-b-2 border-gray-200">
+                <h1 class="font-bold text-gray-500">Cart</h1>
+            </header>
+            <main class="flex flex-col items-center text-center  h-max">
+                <h1 class="p-20 lg:p-14 text-dgblue font-bold ">Your cart is empty.</h1>
+            </main>
+        </div>
+    </div>
+
+    <div class="flex flex-col flex-wrap border-2 justify-center md:flex-row md:gap-28">
+
+        <div class="border-2 lg:w-5/12 h-max grid grid-cols-1 lg:grid-rows-2 gap-8">
+            <div class="flex flex-row items-center overflow-hidden">
+
+                <button id="buttonPrevious" class="absolute left-5 flex items-center justify-center h-10 w-10 bg-white border-2 rounded-3xl lg:hidden"><svg width="12" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M11 1 3 9l8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
+                </button>
+                <div id="imagesCarrousel" class="flex flex-row -translate-x-[370px]">
+                    <img class="lg:rounded-xl" src="../images/image-product-1.jpg" alt="">
+                    <img class="lg:rounded-xl" src="../images/image-product-2.jpg" alt="">
+                    <img class="lg:rounded-xl" src="../images/image-product-3.jpg" alt="">
+                    <img class="lg:rounded-xl" src="../images/image-product-4.jpg" alt="">
+                </div>
+
+
+                <button id="buttonNext" class="absolute flex items-center justify-center h-10 w-10 bg-white border-2 rounded-3xl right-5 lg:hidden">
+                    <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg">
+                        <path d="m2 1 8 8-8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="thumb hidden md:visible h-20 lg:grid grid-cols-4 grid-rows-1 gap-6">
+                <img class="rounded-xl" src="../images/image-product-1-thumbnail.jpg" alt="">
+                <img class="rounded-xl" src="../images/image-product-2-thumbnail.jpg" alt="">
+                <img class="rounded-xl" src="../images/image-product-3-thumbnail.jpg" alt="">
+                <img class="rounded-xl" src="../images/image-product-4-thumbnail.jpg" alt="">
+            </div>
+        </div>
+
+        <div class="card lg:w-5/12 lg:mt-10 border-2 p-4">
+            <h1 class="font-bold font-tutor mb-4 text-corange text-xs lg:text-lg">SNEAKER COMPANY</h1>
+            <h3 class="font-bold font-tutor text-5xl">Fall Limited Edition Sneakers</h3>
+            <p class="text-gray-500 font-tutor font-normal mt-8">These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+            <div class="flex mt-6 lg:mt-0 flex-row lg:flex-col items-center justify-between lg:w-40 lg:text-start">
+                <div class="flex flex-row w-36  justify-between lg:justify-start lg:mt-6">
+                    <h3 class="text-2xl font-bold">$125.00</h3>
+                    <h3 class="bg-plorange text-corange font-bold w-10 rounded-lg text-center">50%</h3>
+                </div>
+                <h3 class="text-base font-medium text-gray-400 line-through"> $250.00</h3>
+            </div>
+
+            <div class="buttons flex flex-col md:flex-row items-center mt-6 gap-4">
+                <div class='flex flex-row items-center h-12 w-64 lg:w-auto bg-gray-300 gap-4 rounded-lg'>
+                    <button class="w-28 lg:w-10 h-10 flex items-center justify-center" type="button" onclick="decrement()"><svg width="12" height="4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path d="M11.357 3.332A.641.641 0 0 0 12 2.69V.643A.641.641 0 0 0 11.357 0H.643A.641.641 0 0 0 0 .643v2.046c0 .357.287.643.643.643h10.714Z" id="a"/></defs><use fill="#FF7E1B" fill-rule="nonzero" xlink:href="#a"/></svg></button>
+                    <p id="computerScore" data-value="0">0</p>
+                    <button class="w-28 lg:w-10 h-10 flex items-center justify-center" type="button" onclick="rps()"><svg width="12" height="12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path d="M12 7.023V4.977a.641.641 0 0 0-.643-.643h-3.69V.643A.641.641 0 0 0 7.022 0H4.977a.641.641 0 0 0-.643.643v3.69H.643A.641.641 0 0 0 0 4.978v2.046c0 .356.287.643.643.643h3.69v3.691c0 .356.288.643.644.643h2.046a.641.641 0 0 0 .643-.643v-3.69h3.691A.641.641 0 0 0 12 7.022Z" id="b"/></defs><use fill="#FF7E1B" fill-rule="nonzero" xlink:href="#b"/></svg></button>
+                </div>
+                <button class="rounded-lg w-64 h-12 bg-corange text-white font-bold">Add to cart</button>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">Your Name Here</a>.
+    </div>
+</body>
+<script>
+    var computerScore = document.getElementById('computerScore');
+    console.log(computerScore.dataset.value)
+
+    function rps() {
+        console.log(computerScore.dataset.value);
+        computerScore.dataset.value++;
+        computerScore.innerHTML = computerScore.dataset.value;
+    }
+
+    function decrement() {
+        if (computerScore.dataset.value == 0) {
+            return;
+        }
+        console.log(computerScore.dataset.value)
+        computerScore.dataset.value--;
+        computerScore.innerHTML = computerScore.dataset.value
+    }
+
+    var cart = document.getElementById('cartComp')
+    var cartIcon = document.getElementById('cartIcon')
+    cartIcon.addEventListener('click', function changeVisibility() {
+        cart.classList.contains('invisible') ?
+            cart.classList.remove('invisible') :
+            cart.classList.add('invisible')
+
+    })
+    console.log(cartIcon)
+
+    var imagesCarrousel = document.getElementById('imagesCarrousel');
+
+    var buttonPrevious = document.getElementById('buttonPrevious');
+    var buttonNext = document.getElementById('buttonNext');
+    let screenWidth = screen.width;
+    console.log(screenWidth)
+</script>
+
+</html>
